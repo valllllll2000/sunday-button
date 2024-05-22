@@ -1,22 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [message, setMessage] = useState(false);
+
+  const handleClick = () => {
+      const today = new Date();
+        const dayOfWeek = today.getDay(); // 0 is Sunday, 1 is Monday, etc.
+        if (dayOfWeek === 0) {
+          setMessage('It is Sunday');
+        } else {
+          setMessage("Sorry, it is not Sunday :( but you're amazing");
+        }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={handleClick}>
+          Is it Sunday?
+        </button>
+        {message && <p>{message}</p>}
       </header>
     </div>
   );
