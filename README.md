@@ -39,6 +39,31 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Setup hosting on Firebase and deploy project
+see https://firebase.google.com/docs/hosting/ for more information
+1. Setup/create the firebase project and follow the instructions from this [link](https://console.firebase.google.com/u/1/project/_/hosting?_gl=1*17nthtk*_ga*MTc0NjEwNjI1MC4xNjg5OTI3NDI4*_ga_CW55HF8NVT*MTY5MDEwNzY0NC42LjEuMTY5MDEwNzY5NS4wLjAuMA..)
+2. Configure Firebase hosting
+
+  `npm install -g firebase-tools`
+  
+  `firebase login`
+  
+  `firebase init`
+  
+  You will be asked to answer some questions:
+  
+    * Choose hosting: Configure files for Firebase hosting and (optionally) set up GitHub Action deploys.
+    * Use an existing project: Select the Firebase project you created earlier (`sunday-button`).
+    * Enter `build` as the public directory.
+    * Configure as a single-page app: Yes.
+    * Set up automatic builds and deploys with GitHub: No.
+  
+4. Build and deploy to firebase
+   
+   `npm run build`
+   
+   `firebase deploy`
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
